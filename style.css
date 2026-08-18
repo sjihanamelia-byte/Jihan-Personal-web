@@ -1,0 +1,543 @@
+/* =========================
+   PENGATURAN DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f5faff;
+    color: #43566b;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    background-color: #a9d8f5;
+    padding: 16px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(102, 166, 205, 0.15);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #285a7a;
+    font-size: 23px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #315d78;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   BERANDA / HERO
+========================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: left;
+
+    padding: 60px 20px;
+
+    /* soft blue gradient */
+    background:
+        radial-gradient(circle at 10% 20%, #dff3ff 0, transparent 25%),
+        radial-gradient(circle at 90% 80%, #cceaff 0, transparent 25%),
+        linear-gradient(135deg, #eaf7ff, #ffffff);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Hiasan bulat di background */
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+
+    top: 80px;
+    left: 10%;
+
+    font-size: 35px;
+    color: #9bd3f2;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero::after {
+    content: "♡";
+    position: absolute;
+
+    bottom: 80px;
+    right: 10%;
+
+    font-size: 45px;
+    color: #a8d8f2;
+
+    animation: float 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.hero-photo {
+    margin-right: 60px;
+    text-align: center;
+}
+
+
+/* Foto profil */
+
+.hero-photo img {
+    width: 250px;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 0 0 5px #b9e1f7,
+        0 12px 30px rgba(75, 145, 185, 0.25);
+
+    display: block;
+
+    background-color: #dff3ff;
+
+    transition: 0.4s;
+}
+
+
+/* Efek ketika foto disentuh */
+
+.hero-photo img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+
+/* =========================
+   TOMBOL PILIH FOTO
+========================= */
+
+.foto-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 10px 22px;
+
+    background-color: #91c9ea;
+
+    color: white;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 12px rgba(89, 154, 194, 0.2);
+
+    transition: 0.3s;
+}
+
+.foto-button:hover {
+    background-color: #72b8df;
+
+    transform: translateY(-3px);
+}
+
+
+/* Input foto disembunyikan */
+
+#pilihFoto {
+    display: none;
+}
+
+
+/* =========================
+   TEKS HERO
+========================= */
+
+.hero-text {
+    max-width: 600px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text p:first-child {
+    color: #6caed2;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 48px;
+
+    color: #356b8c;
+
+    margin: 10px 0;
+
+    line-height: 1.2;
+}
+
+.hero h3 {
+    font-size: 24px;
+
+    color: #5f7f94;
+
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   TOMBOL TENTANG SAYA
+========================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 27px;
+
+    background-color: #91c9ea;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    box-shadow: 0 6px 15px rgba(89, 154, 194, 0.2);
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #72b8df;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    padding: 80px 10%;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* Judul section */
+
+.section h2,
+.motto h2 {
+    color: #39749a;
+
+    margin-bottom: 30px;
+
+    font-size: 32px;
+}
+
+
+/* Hiasan kecil di judul */
+
+.section h2::after {
+    content: "  ♡";
+    color: #9bcfea;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    border-radius: 20px;
+
+    border: 2px solid #d8effc;
+
+    box-shadow:
+        0 8px 25px rgba(95, 160, 195, 0.12);
+
+    transition: 0.3s;
+}
+
+
+/* Efek card */
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(95, 160, 195, 0.2);
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #4d86a8;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MOTTO
+========================= */
+
+.motto {
+    padding: 80px 10%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 20% 30%, #cceaff, transparent 25%),
+        radial-gradient(circle at 80% 70%, #d9f1ff, transparent 25%),
+        #9bcfea;
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Hiasan motto */
+
+.motto::before {
+    content: "✦  ♡  ✦";
+
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    color: #eaf8ff;
+}
+
+.motto h2 {
+    color: white;
+}
+
+.motto p {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    color: white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 28px;
+
+    background-color: #6faed1;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ANIMASI LUCU
+========================= */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TAMPILAN HP
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+
+    /* Hero HP */
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 20px;
+    }
+
+    .hero-photo {
+        margin-right: 0;
+
+        margin-bottom: 30px;
+    }
+
+
+    .hero-photo img {
+        width: 200px;
+
+        height: 200px;
+    }
+
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h3 {
+        font-size: 20px;
+    }
+
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+
+    /* Section HP */
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section h2,
+    .motto h2 {
+        font-size: 27px;
+    }
+
+
+    /* Card HP */
+
+    .card {
+        padding: 22px;
+
+        border-radius: 17px;
+    }
+
+
+    /* Motto HP */
+
+    .motto {
+        padding: 60px 20px;
+    }
+
+    .motto p {
+        font-size: 18px;
+    }
+
+}
